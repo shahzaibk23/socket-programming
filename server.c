@@ -10,7 +10,7 @@
 int main(int argc, char const* argv[])
 {
     int server_fd, new_socket, valread;
-    struct sockaddr_in_address;
+    struct sockaddr_in address;
     int opt = 1;
     int addrlen = sizeof(address);
     char buffer[1024] = {0};
@@ -23,7 +23,7 @@ int main(int argc, char const* argv[])
     }
 
     // Forcefully attaching socket to the port 8080
-    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) {
+    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR , &opt, sizeof(opt))) {
         perror("setsockopt");
         exit(EXIT_FAILURE);
     }
